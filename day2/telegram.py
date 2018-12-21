@@ -3,23 +3,18 @@ from time import sleep
 from bs4 import BeautifulSoup as bs
 # url = f"https://api.telegram.org/bot{key}/"
 
-# key = "682430539:AAGqashKRZk_TM0g9Lq2mTd74Dy4Mwt9r3E"
-
-# https://api.telegram.org/bot682430539:AAGqashKRZk_TM0g9Lq2mTd74Dy4Mwt9r3E/
-
 # getMe 메소드로 확인
 
 # getUpdates 메소드로 user id 확인
-# user_id = "677930435"
 
 # 메세지 보내는 URL 작성
-# https://api.telegram.org/bot682430539:AAGqashKRZk_TM0g9Lq2mTd74Dy4Mwt9r3E/sendMessage?chat_id=677930435&text=message_from_chatbot
+# https://api.telegram.org/bot{key}/sendMessage?chat_id={id}&text=message_from_chatbot
 
 # 브라우저 과정으로 했던 위의 작업을 파이썬으로 자동화 시키기
 
 ## 단순 무식 방법
 
-# url = "https://api.telegram.org/bot682430539:AAGqashKRZk_TM0g9Lq2mTd74Dy4Mwt9r3E/sendMessage?chat_id=677930435&text=hey"
+# url = "https://api.telegram.org/bot{key}/sendMessage?chat_id={id}&text=hey"
 # requests.get(url)
 
 # while True:
@@ -37,5 +32,5 @@ for trend in soup.select('.PM_CL_realtimeKeyword_rolling .ah_item .ah_k'):
 print("naver trend keyword 20")
 for i in range(1,len(msg)):
     word = msg[i]
-    url = f"https://api.telegram.org/bot682430539:AAGqashKRZk_TM0g9Lq2mTd74Dy4Mwt9r3E/sendMessage?chat_id=677930435&text={word}"
+    url = f"https://api.telegram.org/bot{key}/sendMessage?chat_id={id}&text={word}"
     requests.get(url)
